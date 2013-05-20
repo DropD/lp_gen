@@ -5,38 +5,60 @@ add_custom_target(lpbench ALL DEPENDS gen lpbdir)
 
 add_custom_command(
     TARGET lpbench
-    COMMAND for i in {1..100}\; do python gen_lp.py 10 lpbench/lpb_1e1_\$\$i\; done
+    COMMAND for i in {1..20}\; do python gen_lp.py 8 lpbench/lpb_008_\$\$i\; done
     WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
-    COMMENT "generate 100 lps of size 10"
+    COMMENT "generate 20 lps of size 8"
 )
 
 add_custom_command(
     TARGET lpbench
-    COMMAND for i in {1..100}\; do python gen_lp.py 20 lpbench/lpb_2e1_\$\$i\; done
+    COMMAND for i in {1..20}\; do python gen_lp.py 16 lpbench/lpb_016_\$\$i\; done
     WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
-    COMMENT "generate 100 lps of size 20"
+    COMMENT "generate 20 lps of size 16"
 )
 
 add_custom_command(
     TARGET lpbench
-    COMMAND for i in {1..100}\; do python gen_lp.py 50 lpbench/lpb_5e1_\$\$i\; done
+    COMMAND for i in {1..20}\; do python gen_lp.py 32 lpbench/lpb_032_\$\$i\; done
     WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
-    COMMENT "generate 100 lps of size 50"
+    COMMENT "generate 20 lps of size 32"
 )
 
 add_custom_command(
     TARGET lpbench
-    COMMAND for i in {1..100}\; do python gen_lp.py 100 lpbench/lpb_1e2_\$\$i\; done
+    COMMAND for i in {1..20}\; do python gen_lp.py 64 lpbench/lpb_064_\$\$i\; done
     WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
-    COMMENT "generate 100 lps of size 100"
+    COMMENT "generate 20 lps of size 64"
 )
 
 add_custom_command(
     TARGET lpbench
-    COMMAND for i in {1..10}\; do python gen_lp.py 1000 lpbench/lpb_1e3_\$\$i\; done
+    COMMAND for i in {1..20}\; do python gen_lp.py 128 lpbench/lpb_0128_\$\$i\; done
     WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
-    COMMENT "generate 10 lps of size 1000"
+    COMMENT "generate 20 lps of size 128"
 )
+
+add_custom_command(
+    TARGET lpbench
+    COMMAND for i in {1..20}\; do python gen_lp.py 256 lpbench/lpb_0256_\$\$i\; done
+    WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
+    COMMENT "generate 20 lps of size 256"
+)
+
+add_custom_command(
+    TARGET lpbench
+    COMMAND for i in {1..20}\; do python gen_lp.py 512 lpbench/lpb_0512_\$\$i\; done
+    WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
+    COMMENT "generate 20 lps of size 512"
+)
+
+add_custom_command(
+    TARGET lpbench
+    COMMAND for i in {1..20}\; do python gen_lp.py 1024 lpbench/lpb_1024_\$\$i\; done
+    WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
+    COMMENT "generate 20 lps of size 1024"
+)
+
 #---------- benchmark dir ----------
 
 add_custom_target(lpbdir)
